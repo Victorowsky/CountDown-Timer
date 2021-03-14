@@ -1,0 +1,210 @@
+body {
+	background: linear-gradient(hsl(235, 16%, 14%), hsl(234, 17%, 12%));
+	font-family: "Red Hat Text", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.app {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	min-height: -webkit-fill-available;
+	background-image: url("./images/bg-stars.svg");
+}
+.footerHills {
+	background-image: url("./images/pattern-hills.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+.images {
+	display: flex;
+	gap: 30px;
+}
+.images img {
+	cursor: pointer;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	justify-self: center;
+	align-items: center;
+	width: 100%;
+	gap: 75px;
+	z-index: 200;
+	flex-wrap: wrap;
+	transform: translateY(-30%);
+}
+.content h1 {
+	color: white;
+	text-align: center;
+	letter-spacing: 6px;
+}
+.rectanglesContainerMain {
+	display: flex;
+	/* flex-wrap: wrap; */
+	gap: 10px;
+	justify-content: space-around;
+	z-index: 100;
+	max-width: 700px;
+	width: 100%;
+	transition: 1s transform;
+	padding: 0px 20px;
+}
+.rectangleWholeContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	flex: 1;
+}
+/* .rectangleWholeContainer::before {
+	content: " ";
+	z-index: 3;
+	border-radius: 10% 10% 0 0;
+	background-color: rgba(0, 0, 0, 0.25);
+	position: absolute;
+	width: 100%;
+	height: 75px;
+} */
+.shadowBox {
+	z-index: 3;
+	background-color: rgba(0, 0, 0, 0.25);
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	top: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.493);
+}
+
+.oneRectangleContainer {
+	/* width: 150px; */
+	width: 100%;
+	aspect-ratio: 1/1;
+	/* height: 150px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 80px;
+	border-radius: 10px;
+	background-color: hsl(236, 21%, 26%);
+	box-shadow: 0px 10px 1px rgba(0, 0, 0, 0.301);
+	position: relative;
+	overflow: hidden;
+	/* width: 100%; */
+	flex-direction: column;
+	/* transform: translateY(-50%); */
+}
+.oneRectangleContainer::before,
+.oneRectangleContainer::after {
+	content: " ";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	font-size: 14px;
+	background-color: hsl(235, 16%, 14%);
+	border-radius: 50%;
+	z-index: 4;
+}
+.oneRectangleContainer::before {
+	left: 0px;
+	transform: translateX(-50%);
+}
+
+.oneRectangleContainer::after {
+	right: 0px;
+	transform: translateX(50%);
+}
+
+.oneRectangle {
+	color: hsl(345, 95%, 68%);
+	position: relative;
+}
+
+.oneRectangleDescription {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	color: hsl(236, 9%, 31%);
+	margin-top: 20px;
+	font-size: 14px;
+	/* position: absolute; */
+	top: 110%;
+}
+.test {
+	color: hsl(0, 0%, 100%);
+	color: hsl(236, 21%, 26%);
+	color: hsl(235, 16%, 14%);
+	color: hsl(234, 17%, 12%);
+}
+
+@media (max-width: 680px) {
+	.content {
+		/* transform: translateY(0); */
+		width: 100%;
+	}
+	.images {
+		transform: translateY(30px);
+	}
+	.rectanglesContainerMain {
+		width: 100%;
+		/* transform: scale(0.55); */
+	}
+	.rectangleWholeContainer {
+		width: 61px;
+	}
+	.oneRectangleDescription {
+		font-size: 10px;
+	}
+}
+@media (max-width: 550px) {
+	.oneRectangle {
+		font-size: 50px;
+	}
+	.oneRectangleDescription {
+		font-size: 8px;
+	}
+	.content h1 {
+		padding: 0 10px;
+		font-size: 25px;
+	}
+}
+
+.facebook,
+.instagram,
+.pinterest {
+	cursor: pointer;
+	transition: 0.2s ease-in-out background-color;
+	background-color: #8385a9;
+	width: 24px;
+	height: 24px;
+}
+.facebook {
+	-webkit-mask: url("./images/icon-facebook.svg") no-repeat center;
+	mask: url("./images/icon-facebook.svg") no-repeat center;
+}
+.instagram {
+	-webkit-mask: url("./images/icon-instagram.svg") no-repeat center;
+	mask: url("./images/icon-instagram.svg") no-repeat center;
+}
+.pinterest {
+	-webkit-mask: url("./images/icon-pinterest.svg") no-repeat center;
+	mask: url("./images/icon-pinterest.svg") no-repeat center;
+}
+.facebook:hover,
+.pinterest:hover,
+.instagram:hover {
+	background-color: hsl(345, 95%, 68%);
+}
